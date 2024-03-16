@@ -1,0 +1,23 @@
+
+pytorch = ml software for building & deploying ml applications with deep learning primitives
+
+hardware accel. on nvidia gpus
+
+libraries for stuff
+
+torchvision also contains pretrained models & datasets
+
+we can work in regular idiomatic python
+
+autograd = uses a single function call to backpropogate through the model
+
+torchscript = serializable & optimizable models
+
+torchserve
+
+options for optimizing your ML model.
+
+allen NLP?
+fastai
+classyvision
+captum = open-source lib
