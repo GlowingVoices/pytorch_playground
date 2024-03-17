@@ -44,6 +44,12 @@ test_dir = "images/test"
 train_ireader = ImageReader(train_labels,train_dir)
 test_ireader = ImageReader(test_labels, test_dir)
 
+#macs don't have cuda
+device = (
+    "mps"
+    if torch.backends.mps.is_available()
+    else "cpu"
+)
 
 class NN(nn.Module):
     def __init__(self):
@@ -78,8 +84,18 @@ class NN(nn.Module):
         logits = self.dense(logits)
         return logits
 
+
 net = NN()
+
 loss_fn = F.binary_cross_entropy()
+batch_size = 64
 lr= 0.0001
 
+
 optimizer = optim.Adam(net.parameters(),lr)
+#you'll need to make sure the multithreading is working: it might not be a problem here, but training time will definitely increase when I'm doing unet, vision transformer and yolo stuff
+
+def train_model():
+
+
+def test_model():
